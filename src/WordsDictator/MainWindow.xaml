@@ -1,0 +1,66 @@
+﻿<Window x:Class="WordsDictator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WordsDictator"
+        mc:Ignorable="d"
+        Title="Words Dictator" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Name="headRow" Height="Auto"></RowDefinition>
+            <RowDefinition Name="body"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <CheckBox Grid.Column="0" Name="checkBoxIsDeleteAfterSpoken">读完删除</CheckBox>
+            <Button Grid.Column="1" Name="btnRefresh" Click="btnRefresh_Click">
+                <AccessText>刷新(_x)</AccessText>
+            </Button>
+            <Button Grid.Column="2" Name="btnSpeak" Click="btnSpeak_Click">
+                <AccessText>朗读(_c)</AccessText>
+            </Button>
+        </Grid>
+        <Grid Grid.Row="1">
+            <TabControl>
+                <TabItem Header="输出">
+                    <Grid Background="#FFE5E5E5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <ListBox Grid.Row="0" Name="listSpeechSources" MaxHeight="80" SelectionChanged="listSpeechSources_SelectionChanged"></ListBox>
+                        <TextBox Grid.Row="1" Name="textBoxOutput" AcceptsReturn="True"></TextBox>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="输入">
+                    <Grid Background="#FFE5E5E5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBox Grid.Row="0" Name="textBoxInput" AcceptsReturn="True"></TextBox>
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Button Grid.Column="0" Name="btnLoadInput" Click="btnLoadInput_Click">Load</Button>
+                            <Button Grid.Column="1" Name="btnSaveInput" Click="btnSaveInput_Click">Save</Button>
+                        </Grid>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="白板">
+                    <Grid Background="#FFE5E5E5">
+                        <TextBox Grid.Row="0" AcceptsReturn="True"></TextBox>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </Grid>
+    </Grid>
+</Window>
