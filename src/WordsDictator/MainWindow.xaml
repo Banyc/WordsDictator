@@ -18,17 +18,17 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <CheckBox Grid.Column="0" Name="checkBoxIsDeleteAfterSpoken">读完删除</CheckBox>
+            <CheckBox Grid.Column="0" Name="checkBoxIsDeleteAfterSpoken">Delete after read/读完删除</CheckBox>
             <Button Grid.Column="1" Name="btnRefresh" Click="btnRefresh_Click">
-                <AccessText>刷新(_x)</AccessText>
+                <AccessText>Refresh/刷新(_c)</AccessText>
             </Button>
             <Button Grid.Column="2" Name="btnSpeak" Click="btnSpeak_Click">
-                <AccessText>朗读(_c)</AccessText>
+                <AccessText>Read/朗读(_v)</AccessText>
             </Button>
         </Grid>
         <Grid Grid.Row="1">
             <TabControl>
-                <TabItem Header="输出">
+                <TabItem Header="Output/输出">
                     <Grid Background="#FFE5E5E5">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"></RowDefinition>
@@ -38,7 +38,7 @@
                         <TextBox Grid.Row="1" Name="textBoxOutput" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"></TextBox>
                     </Grid>
                 </TabItem>
-                <TabItem Header="输入">
+                <TabItem Header="Input/输入">
                     <Grid Background="#FFE5E5E5">
                         <Grid.RowDefinitions>
                             <RowDefinition></RowDefinition>
@@ -55,7 +55,7 @@
                         </Grid>
                     </Grid>
                 </TabItem>
-                <TabItem Header="白板">
+                <TabItem Header="Blank/白板">
                     <Grid Background="#FFE5E5E5">
                         <TextBox Grid.Row="0" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"></TextBox>
                     </Grid>
