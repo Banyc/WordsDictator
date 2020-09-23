@@ -43,7 +43,8 @@ namespace WordsDictator
 
         private void btnRefresh_Click(object sender, RoutedEventArgs e)
         {
-            string[] words = textBoxInput.Text.Split(new char[] { ' ', '\t', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+            //string[] words = textBoxInput.Text.Split(new char[] { ' ', '\t', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] words = textBoxInput.Text.Split(new char[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
             if (words.Length <= 0)
             {
                 return;
@@ -54,7 +55,8 @@ namespace WordsDictator
             SpeakTextBoxOutputText();
             if (checkBoxIsDeleteAfterSpoken.IsChecked.Value)
             {
-                string pattern = $"(?<=[\n\r ]|^){selectedWord}(?=[\n\r ]|$)";
+                //string pattern = $"(?<=[\n\r\t ]|^){selectedWord}(?=[\n\r\t ]|$)";
+                string pattern = $"(?<=[\n\r]|^){selectedWord}(?=[\n\r]|$)";
                 textBoxInput.Text = Regex.Replace(textBoxInput.Text, pattern, "");
             }
         }
@@ -73,7 +75,7 @@ namespace WordsDictator
             }
             var selectedVoice = this.speech.GetInstalledVoices()[listSpeechSources.SelectedIndex];
             this.speech.SelectVoice(selectedVoice.VoiceInfo.Name);
-            this.speech.SpeakAsync(textBoxOutput.Text);
+            this.speech.SpeakAsync(textBoxOutput.Text.Trim());
         }
 
         private void btnSaveInput_Click(object sender, RoutedEventArgs e)
