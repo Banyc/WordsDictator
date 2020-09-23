@@ -35,7 +35,7 @@
                             <RowDefinition></RowDefinition>
                         </Grid.RowDefinitions>
                         <ListBox Grid.Row="0" Name="listSpeechSources" MaxHeight="80" SelectionChanged="listSpeechSources_SelectionChanged"></ListBox>
-                        <TextBox Grid.Row="1" Name="textBoxOutput" AcceptsReturn="True"></TextBox>
+                        <TextBox Grid.Row="1" Name="textBoxOutput" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"></TextBox>
                     </Grid>
                 </TabItem>
                 <TabItem Header="输入">
@@ -44,7 +44,7 @@
                             <RowDefinition></RowDefinition>
                             <RowDefinition Height="Auto"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <TextBox Grid.Row="0" Name="textBoxInput" AcceptsReturn="True"></TextBox>
+                        <TextBox Grid.Row="0" Name="textBoxInput" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"></TextBox>
                         <Grid Grid.Row="1">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition></ColumnDefinition>
@@ -57,7 +57,7 @@
                 </TabItem>
                 <TabItem Header="白板">
                     <Grid Background="#FFE5E5E5">
-                        <TextBox Grid.Row="0" AcceptsReturn="True"></TextBox>
+                        <TextBox Grid.Row="0" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"></TextBox>
                     </Grid>
                 </TabItem>
             </TabControl>
